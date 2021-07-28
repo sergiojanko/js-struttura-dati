@@ -186,10 +186,30 @@ const renderDeck = (deck, targetElement) => {
     targetElement.innerHTML = deckTemplate;
 };
 
+
+const inputField = document.getElementById("search");
+const selectField = document.getElementById("filter");
+const button = document.getElementById("button");
+
+button.addEventListener("click", () => {
+    if (selectField.value === "all") {
+        renderDeck(deck, cardSection);
+        return;
+    }
+
+    const filteredDeck = [];
+    for (let i = 0; i < deck.length; i++){
+        console.log("CI SONO!")
+        if (deck[i][selectField.value] == inputField.value){
+            filteredDeck.push(deck[i]);
+        }
+        console.log(inputField.value);
+        console.log(filteredDeck);
+    }
+    renderDeck(filteredDeck, cardSection);
+})
+
 const cardSection = document.getElementById("cards");
-
-
-
 
 renderDeck(deck,cardSection);
 

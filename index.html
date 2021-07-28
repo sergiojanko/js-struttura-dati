@@ -8,6 +8,17 @@
     <title>Magic Card</title>
   </head>
   <body>
+    <select id="filter">
+      <option selected value="all">Tutte</option>
+      <option value="name">Nome</option>
+      <option value="launchCost">Costo Mana</option>
+      <option value="type">Tipo Carta</option>
+      <option value="subType">Sotto-tipo</option>
+      <option value="constitution">Costituzione</option>
+      <option value="strength">Forza</option>
+    </select>
+    <input type="text" id="search" class="hidden" />
+    <button id="button">Filtra</button>
     <section id="cards"></section>
     <script src="./js/script.js"></script>
   </body>
